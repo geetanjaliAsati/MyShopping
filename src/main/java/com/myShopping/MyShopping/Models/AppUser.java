@@ -1,15 +1,14 @@
 package com.myShopping.MyShopping.Models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.UUID;
-
+//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
 @Entity
 public class AppUser {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
 
     @Column(nullable = false)
@@ -22,7 +21,7 @@ public class AppUser {
     String password;
 
 
-    String userType;
+    String userType;//buyer / seller / admin
 
     @Column(unique = true, length = 10)
     int phoneNumber;
