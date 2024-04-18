@@ -86,3 +86,33 @@ public class AppUser {
         this.phoneNumber = phoneNumber;
     }
 }
+
+/*
+Buyer Controller
+/buyer/search/product?category=FMCG
+
+Seller Controller
+/seller/product/remove?userId=lsdjfiejfe&&productId => by this endpoint a particular seller can remove their product from the application
+
+Admin controller
+/admin/product/remove?userid=eojfslvfjoe&&productId=lfjeofjei => Admin kind of user can delete any product just we need to check one thing userId is of type admin or not
+
+Common Controller
+/api/user/register => all the kind of users will be able to register themselves
+/api/product/all => all the users can view the products by this endpoint
+
+
+* */
+
+
+
+
+
+
+
+
+
+
+
+
+
