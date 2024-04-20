@@ -24,12 +24,12 @@ public class AppUser {
     String userType;//buyer / seller / admin
 
     @Column(unique = true, length = 10)
-    int phoneNumber;
+    long phoneNumber;
 
     public AppUser() {
     }
 
-    public AppUser(int phoneNumber, String userType, String password, String email, String name, UUID id) {
+    public AppUser(long phoneNumber, String userType, String password, String email, String name, UUID id) {
         this.phoneNumber = phoneNumber;
         this.userType = userType;
         this.password = password;
@@ -78,11 +78,11 @@ public class AppUser {
         this.userType = userType;
     }
 
-    public int getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }
@@ -93,6 +93,7 @@ Buyer Controller
 
 Seller Controller
 /seller/product/remove?userId=lsdjfiejfe&&productId => by this endpoint a particular seller can remove their product from the application
+/seller/product/add?sellerId=djfleifjdf(RequestBody productDetails) =>writing sellerId to get to know which particular seller is trying to add product, seller kind of user can add product into database
 
 Admin controller
 /admin/product/remove?userid=eojfslvfjoe&&productId=lfjeofjei => Admin kind of user can delete any product just we need to check one thing userId is of type admin or not
