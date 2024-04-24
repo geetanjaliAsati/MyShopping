@@ -25,6 +25,9 @@ public class BuyerService {
 
     @Autowired
     OrderRepository orderRepository;
+
+    @Autowired
+    MailService mailService;
     public BillDTO placeOrder(List<OrderDetailsDTO> orderDetailsDTOList, UUID userID) {
 //    Get user by id
         /*
@@ -73,6 +76,8 @@ public class BuyerService {
 
         orderRepository.save(orderTable);
         billDTO.setBillId(orderTable.getOrderId());
+
+        mailService.sendMail("Order got placed", user.getEmail(), "Congratulations!");
         return billDTO;
 
     }

@@ -13,7 +13,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/buyer")
 public class BuyerController {
-
+//bean is the object in springboot
     @Autowired
     BuyerService buyerService;
     @PostMapping("/placeorder")
